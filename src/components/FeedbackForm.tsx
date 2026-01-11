@@ -107,13 +107,13 @@ export function FeedbackForm({ onSuccess }: FeedbackFormProps) {
             formData.append("bot-field", "");
             formData.append("name", data.name || "Anonymous");
             formData.append("rating", String(data.rating));
-            formData.append("feedback", data.feedback);
-            formData.append("phone", data.phone || "Not provided");
+            body.append("feedback", data.feedback);
+            body.append("phone", data.phone || "Not provided");
 
-            await fetch("/", {
+            await fetch("/__forms.html", {
                 method: "POST",
                 headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                body: new URLSearchParams(formData as any).toString(),
+                body: body.toString(),
             });
 
             // Reset form
@@ -129,14 +129,6 @@ export function FeedbackForm({ onSuccess }: FeedbackFormProps) {
 
     return (
         <>
-            {/* Hidden form for Netlify Forms detection */}
-            <form name="feedback" netlify-honeypot="bot-field" data-netlify="true" hidden>
-                <input type="text" name="name" />
-                <input type="number" name="rating" />
-                <textarea name="feedback"></textarea>
-                <input type="text" name="phone" />
-            </form>
-
             <form
                 name="feedback"
                 onSubmit={handleSubmit(onSubmit)}

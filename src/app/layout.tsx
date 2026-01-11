@@ -49,15 +49,6 @@ export default function RootLayout({
         className={`${outfit.variable} ${notoSerif.variable} font-sans antialiased`}
       >
         {children}
-        {/* Netlify Form Detection Fallback */}
-        <form name="feedback" data-netlify="true" netlify-honeypot="bot-field" hidden>
-          <input type="hidden" name="form-name" value="feedback" />
-          <input type="hidden" name="bot-field" />
-          <input type="text" name="name" />
-          <input type="number" name="rating" />
-          <textarea name="feedback"></textarea>
-          <input type="text" name="phone" />
-        </form>
       </body>
     </html>
   );

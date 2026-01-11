@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Netlify Form Detection</title>
+</head>
+
+<body>
+    <!-- 
+      This file exists so Netlify can detect the form during build time.
+      We handle the actual submission via AJAX in the React component.
+      All fields here must match the names used in FeedbackForm.tsx.
+    -->
+    <form name="feedback" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="feedback" />
+        <input type="text" name="bot-field" />
+        <input type="text" name="name" />
+        <input type="number" name="rating" />
+        <textarea name="feedback"></textarea>
+        <input type="text" name="phone" />
+    </form>
+</body>
+
+</html>
