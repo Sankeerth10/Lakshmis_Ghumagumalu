@@ -101,12 +101,12 @@ export function FeedbackForm({ onSuccess }: FeedbackFormProps) {
         setIsSubmitting(true);
 
         try {
-            // For Netlify Forms, we create a hidden form and submit
-            const formData = new FormData();
-            formData.append("form-name", "feedback");
-            formData.append("bot-field", "");
-            formData.append("name", data.name || "Anonymous");
-            formData.append("rating", String(data.rating));
+            // For Netlify Forms, we create a URLSearchParams body and submit
+            const body = new URLSearchParams();
+            body.append("form-name", "feedback");
+            body.append("bot-field", "");
+            body.append("name", data.name || "Anonymous");
+            body.append("rating", String(data.rating));
             body.append("feedback", data.feedback);
             body.append("phone", data.phone || "Not provided");
 
