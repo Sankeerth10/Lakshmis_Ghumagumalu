@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Detection Fallback</title>
+</head>
+<body>
+    <!-- This file is for Netlify build-time form detection -->
+    <form name="feedback" netlify-honeypot="bot-field" data-netlify="true" hidden>
+        <input type="text" name="name" />
+        <input type="number" name="rating" />
+        <textarea name="feedback"></textarea>
+        <input type="text" name="phone" />
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
