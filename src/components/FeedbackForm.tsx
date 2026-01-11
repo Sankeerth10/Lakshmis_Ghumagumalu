@@ -104,6 +104,7 @@ export function FeedbackForm({ onSuccess }: FeedbackFormProps) {
             // For Netlify Forms, we create a hidden form and submit
             const formData = new FormData();
             formData.append("form-name", "feedback");
+            formData.append("bot-field", "");
             formData.append("name", data.name || "Anonymous");
             formData.append("rating", String(data.rating));
             formData.append("feedback", data.feedback);
